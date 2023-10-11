@@ -54,6 +54,19 @@ body {
   font-size: 25px;
 }
 
+#updated-count {
+  font-size: 20px;
+  color:red;
+  width: 400px;
+  height: 60px;
+  position: absolute;
+  z-index: 10;
+  left: 100px;
+  top: 250px;
+  border-radius: 30px;
+  border-color: white;
+}
+
 .stores-list-container {
   width: 400px;
   border-radius: 30px;
@@ -111,13 +124,7 @@ body {
   color: white;
   margin-right: 8px;
 }
-#updated-count {
-  font-size: 20px;
-  color:red;
-  text-align: center;
-  margin-top: 10px;
-  position: absolute;
-}
+
 .stores-list {
   padding-left: 20px;
   padding-right: 20px;
