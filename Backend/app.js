@@ -39,6 +39,7 @@ app.get("/api/stores", async (req, res) => {
     mongoclient = await connectToMongoDB();
     const db = mongoclient.db("storeLocator");
     const collection = db.collection("stores");
+    const collection2 = db.collection("zipCount");
     const zipCode = req.query.zip_code;
     const googleMapsUrl = "https://maps.googleapis.com/maps/api/geocode/json";
     const response = await axios.get(googleMapsUrl, {
@@ -70,7 +71,30 @@ app.get("/api/stores", async (req, res) => {
     };
     await collection.createIndex({ location: "2dsphere" });
     const result = await collection.find(query).toArray();
-    res.status(200).send(result);
+    // res.status(200).send(result);
+    const currentDate= new Date();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1; // Note: Months are zero-based, so add 1 to get the correct month.
+    const day = currentDate.getDate();
+    const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
+    const existingZipCount = await collection2.findOne({ zipcode: zipCode, formattedDate: formattedDate});
+    if (existingZipCount) {
+      // If the zipcode exists, increment the count
+      await collection2.updateOne({ zipcode: zipCode, formattedDate: formattedDate }, { $inc: { count: 1 } });
+      // Get the updated count value
+      const updatedCount = (await collection2.findOne({ zipcode: zipCode, formattedDate: formattedDate })).count;
+      // console.log(`${count}`);
+      res.status(200).json({stores:result,updatedCount});
+      
+      
+    } else {
+      // If the zipcode doesn't exist, insert it with a count of 1
+      await collection2.insertOne({ zipcode: zipCode, formattedDate: formattedDate, count: 1 });
+
+      const updatedCount = 1;
+      res.status(200).json({ stores: result, updatedCount });
+    }
+    
   } catch (error) {
     console.error("Error inserting documents:", error);
     res.status(500).send(error);

@@ -111,7 +111,13 @@ body {
   color: white;
   margin-right: 8px;
 }
-
+#updated-count {
+  font-size: 20px;
+  color:red;
+  text-align: center;
+  margin-top: 10px;
+  position: absolute;
+}
 .stores-list {
   padding-left: 20px;
   padding-right: 20px;
@@ -213,4 +219,9 @@ body {
   align-items: center;
   color: red;
   font-size: 20px;
+}
+.container{
+  display: flex;
+  justify-content:center;
+  align-items: center;
 }

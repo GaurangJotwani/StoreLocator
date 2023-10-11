@@ -1,41 +1,36 @@
 <html>
-  <head>
-    <title>Store Locator</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script
-      src="https://kit.fontawesome.com/ebe7a1d1dc.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
 
-  <body>
-    <div class="title">Starbucks Locator</div>
+<head>
+  <title>Store Locator</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/ebe7a1d1dc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="title">Starbucks Locator</div>
+  <div class="container">
     <div class="search-container">
       <div class="search">
-        <input
-          type="text"
-          id="zip-code"
-          onkeyup="onEnter(event)"
-          placeholder="Enter Zip"
-        />
+        <input type="text" id="zip-code" onkeyup="onEnter(event)" placeholder="Enter Zip" />
         <i class="fas fa-search" onclick="getStores()"></i>
       </div>
     </div>
+
+    <div id="updated-count"></div>
+
     <div class="stores-list-container">
       <div class="stores-list">
         <div class="intro">
-          <span class="enter-zip">Enter zip code</span
-          ><span class="find-coffee">Find coffee near you!</span>
+          <span class="enter-zip">Enter zip code</span><span class="find-coffee">Find coffee near you!</span>
         </div>
       </div>
     </div>
     <!-- The div to hold the map -->
     <div id="map"></div>
-    <script src="js/index.js"></script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBv8prgzAolx2RRj9PuislvH3zqDCYJn4&libraries=places&callback=initMap&solution_channel=GMP_codelabs_simplestorelocator_v1_a"
-    ></script>
-  </body>
+  </div>
+  <script src="js/index.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpd4rstD2O5HgvHm8LIKiADrAQhlVmH88&libraries=places&callback=initMap&solution_channel=GMP_codelabs_simplestorelocator_v1_a"></script>
+</body>
+
 </html>

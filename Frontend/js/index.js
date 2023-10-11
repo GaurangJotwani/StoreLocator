@@ -14,11 +14,11 @@ function initMap() {
 
 const getStores = () => {
   const zipCode = document.getElementById("zip-code").value;
-  if (!zipCode || zipCode.length != 5 || !isStringDigits(zipCode)) {
-    clearLocations();
-    InvalidZipCode();
-    return;
-  }
+  // if (!zipCode || zipCode.length != 5 || !isStringDigits(zipCode)) {
+  //   clearLocations();
+  //   InvalidZipCode();
+  //   return;
+  // }
   const API_URL = "http://127.0.0.1:3000/api/stores?";
   fetch(
     API_URL +
@@ -35,11 +35,18 @@ const getStores = () => {
       }
     })
     .then((data) => {
-      if (data.length > 0) {
+
+      const { updatedCount, stores } = data;
+
+      if (stores.length > 0) {
         clearLocations();
-        searchLocationNear(data);
-        setStoresList(data);
+        searchLocationNear(stores);
+        setStoresList(stores);
         setOnClickListener();
+        
+        const updatedCountParagraph = document.getElementById("updated-count");
+        updatedCountParagraph.textContent = "This has been searched for " + updatedCount + " times today! ";
+        console.log("updatedCount here: " + updatedCount);
       } else {
         clearLocations();
         noStoresFound();
