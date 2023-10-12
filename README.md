@@ -9,6 +9,10 @@ This Coffee Shop Locator App was created by the following individuals:
 - Gaurang Jotwani
 - Jishva Shah
 
+## Screenshots:
+
+![image](https://github.com/GaurangJotwani/StoreLocator/assets/77269630/7d96000c-f766-4ece-b6a8-9e8b45f88d7c)
+
 ## Table of Contents
 
 - [Features](#features)
