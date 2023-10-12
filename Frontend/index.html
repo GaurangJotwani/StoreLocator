@@ -8,10 +8,14 @@
 
 <body>
   <div class="title">Starbucks Locator</div>
-  <div class="container">
     <div class="search-container">
       <div class="search">
-        <input type="text" id="zip-code" onkeyup="onEnter(event)" placeholder="Enter Zip" />
+        <input
+          type="text"
+          id="zip-code"
+          onkeyup="onEnter(event)"
+          placeholder="Enter Zip"
+        />
         <i class="fas fa-search" onclick="getStores()"></i>
       </div>
     </div>
@@ -27,10 +31,8 @@
     </div>
     <!-- The div to hold the map -->
     <div id="map"></div>
-  </div>
   <script src="js/index.js"></script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=000000000000000000000000000000000000000&libraries=places&callback=initMap&solution_channel=GMP_codelabs_simplestorelocator_v1_a"></script>
 </body>
-
-</html>
+</html>                                              

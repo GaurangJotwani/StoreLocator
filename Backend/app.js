@@ -83,7 +83,7 @@ app.get("/api/stores", async (req, res) => {
       await collection2.updateOne({ zipcode: zipCode, formattedDate: formattedDate }, { $inc: { count: 1 } });
       // Get the updated count value
       const updatedCount = (await collection2.findOne({ zipcode: zipCode, formattedDate: formattedDate })).count;
-      // console.log(`${count}`);
+      // console.log(`${updatedCount}`);
       res.status(200).json({stores:result,updatedCount});
       
       

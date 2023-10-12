@@ -57,14 +57,15 @@ body {
 #updated-count {
   font-size: 20px;
   color:red;
-  width: 400px;
-  height: 60px;
+  width: 380px;
+  height: 30px;
   position: absolute;
   z-index: 10;
-  left: 100px;
-  top: 250px;
-  border-radius: 30px;
-  border-color: white;
+  padding: 0.2%;
+  top:275px;
+  left: 105px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .stores-list-container {
@@ -227,8 +228,4 @@ body {
   color: red;
   font-size: 20px;
 }
-.container{
-  display: flex;
-  justify-content:center;
-  align-items: center;
-}
+
