@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Gaurang jotwani, Jishva Shah",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^8.51.0",
