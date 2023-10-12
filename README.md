@@ -3,15 +3,18 @@
 Welcome to the Coffee Shop Locator App for the Bay Area. This web application helps users find the nearest coffee shops based on their zip code. It also provides information about how many times a zip code has been queried on a given date. The app uses Google Maps API for location services, HTML/CSS/JavaScript for the frontend, and MongoDB as the backend data store. The server-side is built using Express.js.
 
 ## Authors
-
 This Coffee Shop Locator App was created by the following individuals:
-
 - Gaurang Jotwani
 - Jishva Shah
 
 ## Screenshots:
-
 ![image](https://github.com/GaurangJotwani/StoreLocator/assets/77269630/7d96000c-f766-4ece-b6a8-9e8b45f88d7c)
+## Thumbnail link:
+https://drive.google.com/file/d/1CbeecVrXwPvuNPcgCcBRUdWdWYI8R6u6/view?usp=sharing
+## Slides link:
+https://docs.google.com/presentation/d/12msIifGvIZOlOEdY9bwK7pyhyO8Fb8Cil5fdKV9fphc/edit?usp=sharing
+## Deployed Website Link:
+## Public Video Demnstration Link:
 
 ## Table of Contents
 
